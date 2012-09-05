@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Full Screen Background : A jQuery plugin for displaying full screen backgrounds and transitioning between them." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Full Screen Background</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/gfyans/FullScreenBackground">View on GitHub</a>
+
+          <h1 id="project_title">Full Screen Background</h1>
+          <h2 id="project_tagline">A jQuery plugin for displaying full screen backgrounds and transitioning between them.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/gfyans/FullScreenBackground/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/gfyans/FullScreenBackground/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>FullScreenBackground</h1>
+
+<p>A jQuery plugin for displaying full screen backgrounds and transitioning between them.</p>
+
+<p>Please note: This isn't in any way ready for a production environment, this is the result of me playing
+around for a few hours one day. It's been minimally tested on IE7/8/9, Firefox 14 and Chrome 21.</p>
+
+<p>Comments, suggestions and improvements welcome.</p>
+
+<h1>Options</h1>
+
+<pre><code>files - The images to display as fullscreen backgrounds
+-------------------------------------------------------------------
+Type:     Array (string)
+Required: True
+
+interval - The time, in milliseconds, between image transitions
+-------------------------------------------------------------------
+Type:     int
+Required: False
+
+transitionTime - The time, in milliseconds, to complete the transition
+-------------------------------------------------------------------
+Type:     int
+Required: False
+</code></pre>
+
+<h1>Usage</h1>
+
+<p>Create a container DIV element on your page:</p>
+
+<pre><code>&lt;div id="fsbgContainer"&gt;&lt;/div&gt;
+</code></pre>
+
+<p>Call .fullscreenbackground on it using jQuery:</p>
+
+<pre><code>$("div#fsbgContainer").fullscreenbackground({
+    files: [
+            "/Content/images/background_001.jpg",
+            "/Content/images/background_002.jpg",
+            "/Content/images/background_003.jpg"
+    ],
+    interval: 10000,
+    transitionTime: 1000
+});
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Full Screen Background maintained by <a href="https://github.com/gfyans">gfyans</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
