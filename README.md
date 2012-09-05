@@ -20,3 +20,22 @@ Options
     -------------------------------------------------------------------
     Type:     int
     Required: False
+    
+Usage
+=====
+
+Create a container DIV element on your page:
+
+    <div id="fsbgContainer"></div>
+
+Call .fullscreenbackground on it using jQuery:
+
+    $("div#fsbgContainer").fullscreenbackground({
+        files: [
+                "/Content/images/background_001.jpg",
+                "/Content/images/background_002.jpg",
+                "/Content/images/background_003.jpg"
+        ],
+        interval: 10000,
+        transitionTime: 1000
+    });
