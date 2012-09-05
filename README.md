@@ -3,6 +3,11 @@ FullScreenBackground
 
 A jQuery plugin for displaying full screen backgrounds and transitioning between them.
 
+Please note: This isn't in any way ready for a production environment, this is the result of me playing
+around for a few hours one day. It's been minimally tested on IE7/8/9, Firefox 14 and Chrome 21.
+
+Comments, suggestions and improvements welcome.
+
 Options
 =======
         
