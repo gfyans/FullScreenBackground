@@ -26,6 +26,16 @@ Options
     Type:     int
     Required: False
     
+    useScanlines - Determines whether or not to render scanlines
+    -------------------------------------------------------------------
+    Type:     boolean
+    Required: False
+    
+    scanlineGraphic - Path to the scanline tile
+    -------------------------------------------------------------------
+    Type:     string
+    Required: False
+    
 Usage
 =====
 
@@ -42,5 +52,7 @@ Call .fullscreenbackground on it using jQuery:
                 "/Content/images/background_003.jpg"
         ],
         interval: 10000,
-        transitionTime: 1000
+        transitionTime: 1000,
+        useScanlines: true,
+        scanlineGraphic: "content/images/diagonal_pattern_bw.png"
     });

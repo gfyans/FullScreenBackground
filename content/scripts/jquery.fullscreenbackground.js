@@ -30,10 +30,8 @@
                 files: opt.files,
                 interval: opt.interval || 5000,
                 transitionTime: opt.transitionTime || 600,
-                useScanlines: opt.useScanlines || true,
-                scanlineWidth: opt.scalineWidth || 2,
-                scanlineSpacing: opt.scanlineSpacing || 2,
-                scanlineRGBA: opt.scanlineRGA || [0, 0, 0, 0.5]
+                useScanlines: opt.useScanlines || false,
+                scanlineGraphic: opt.scanlineGraphic || ""
             },
             nextPosition = 0, // Hold our current position when iterating options.files
             previousPosition, // Hold the previous position when iterating options.files
@@ -81,7 +79,7 @@
                     "left": "0px"
                 });
 
-                fsbgContainer$.find("img").addClass("delete-me");
+                fsbgContainer$.find("img").addClass("-fsb-delete-me");
 
                 fsbgContainer$.append(newImage$);
 
@@ -94,7 +92,7 @@
                         if (firstRun === true) {
                             firstRun = false;
                         } else {
-                            fsbgContainer$.find(".delete-me").remove();
+                            fsbgContainer$.find(".-fsb-delete-me").remove();
                         }
                     });
                 });
@@ -117,7 +115,18 @@
             },
 
             scanlineInit = function () {
+                var scanlineContainer$ = $("<div class=\"-fsb-scanlines\" />");
+                scanlineContainer$.css({
+                    position: "fixed",
+                    width: "100%",
+                    height: "100%",
+                    "z-index": -99999,
+                    top: 0,
+                    left: 0,
+                    "background-image": "url('" + options.scanlineGraphic + "')"
+                });
 
+                scanlineContainer$.insertAfter(fsbgContainer$);
             },
 
             backgroundInit = function () {
