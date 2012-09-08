@@ -48,19 +48,21 @@
 
                 if (imageRatio <= containerRatio) {
                     newImage$.css({ width: containerWidth + "px", height: "auto" });
-
-                    // offset the top to make it appear centered
-                    if (newImage$.height() > containerHeight) {
-                        newImage$.css({ top: "-" + ((imageHeight - containerHeight) / 2) + "px" });
-                    }
                 } else {
                     newImage$.css({ height: containerHeight + "px", width: "auto" });
-
-                    // offset the left to make it appear centered
-                    if (newImage$.width() > containerWidth) {
-                        newImage$.css({ left: "-" + ((imageWidth - containerWidth) / 2) + "px" });
-                    }
                 }
+				
+				// Reset the width and height
+				imageWidth = newImage$.width();
+				imageHeight = newImage$.height();
+				
+				if (imageHeight > containerHeight) {
+					// offset the top to make it appear centered
+					newImage$.css({ top: "-" + ((imageHeight - containerHeight) / 2) + "px" });
+				} else if (imageWidth > containerWidth) {
+					// offset the left to make it appear centered
+					newImage$.css({ left: "-" + ((imageWidth - containerWidth) / 2) + "px" });
+				}
             },
 
             queueImage = function () {
@@ -158,7 +160,7 @@
             init = function () {
                 backgroundInit();
 
-                if (options.useScanlines) {
+                if (options.useScanlines && options.scanlineGraphic !== "") {
                     scanlineInit();
                 }
             };
